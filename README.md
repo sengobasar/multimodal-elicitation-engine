@@ -537,9 +537,11 @@ The mismatch in Case 2 is clinically meaningful — the system flags it.
 
 ## Research Context
 
-This project is inspired by multimodal mental health modeling research that combines structured assessments with conversational or behavioral signals. 
+This project is inspired by research on multimodal mental health modeling, particularly:
 
-Unlike many prior systems that concatenate modalities, this engine explicitly models **consistency between self-report and language signals** as a separate diagnostic feature.
+**Trotzek, M., Koitka, S., & Friedrich, C.M. (2020).** *Utilizing Neural Networks and Linguistic Metadata for Early Detection of Depression Indications in Text Sequences.* IEEE Transactions on Knowledge and Data Engineering, Vol. 32, No. 3.
+
+Unlike prior systems that concatenate modalities, this engine explicitly models **consistency between self-report and language signals** as a separate diagnostic feature.
 
 The current implementation is a deterministic prototype and does not reproduce any specific neural architecture from prior literature.
 
@@ -612,15 +614,14 @@ Pearson correlation between:
 
 ## References
 
-1. Radford, A., et al. (2019). *Language Models are Unsupervised Multitask Learners.* OpenAI.
-2. Sanh, V., et al. (2019). *DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter.* NeurIPS Workshop. [[paper]](https://arxiv.org/abs/1910.01108)
-3. Hutto, C.J., & Gilbert, E. (2014). *VADER: A Parsimonious Rule-based Model for Sentiment Analysis.* ICWSM. [[paper]](https://ojs.aaai.org/index.php/ICWSM/article/view/14550)
-4. Pennebaker, J.W. (2011). *The Secret Life of Pronouns: What Our Words Say About Us.* Bloomsbury Press.
-5. Beck, A.T., et al. (1979). *Cognitive Therapy of Depression.* Guilford Press. — Cognitive distortion patterns
-6. Kroenke, K., et al. (2001). *The PHQ-9: Validity of a brief depression severity measure.* Journal of General Internal Medicine. [[paper]](https://pubmed.ncbi.nlm.nih.gov/11556941/)
-7. Spitzer, R.L., et al. (2006). *A brief measure for assessing generalized anxiety disorder: the GAD-7.* Archives of Internal Medicine. [[paper]](https://pubmed.ncbi.nlm.nih.gov/16717171/)
-8. Lundberg, S.M., & Lee, S.I. (2017). *A Unified Approach to Interpreting Model Predictions.* NeurIPS. [[paper]](https://arxiv.org/abs/1705.07874) — SHAP interpretability
+**Trotzek, M., Koitka, S., & Friedrich, C.M. (2020).** *Utilizing Neural Networks and Linguistic Metadata for Early Detection of Depression Indications in Text Sequences.* IEEE Transactions on Knowledge and Data Engineering, Vol. 32, No. 3, March 2020.
 
+This project adapts the concept of combining neural text representations with linguistic metadata, while introducing explicit consistency modeling between self-report and conversational signals as a novel diagnostic feature.
+
+
+**Project Context:** This backend is part of a larger research prototype exploring consistency-based mental state assessment. The corresponding Flutter frontend implements the FSM-based explicit assessment phase. This README documents the computational infrastructure and mathematical foundations.
+
+---
 
 ## License
 
