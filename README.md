@@ -23,6 +23,28 @@ This is **not** a clinical diagnostic tool. It is a research prototype exploring
 
 ---
 
+## Why Consistency Matters
+
+Traditional mental health systems use either structured questionnaires or language modeling.
+
+This engine introduces an explicit **consistency variable**:
+
+```
+C = ||x_explicit - x̂_explicit||
+```
+
+This variable models disagreement between self-report and conversational signals, treating **inconsistency itself as an informative feature**.
+
+When someone's words don't match their self-report, that mismatch may indicate:
+- Minimization or denial
+- Alexithymia (difficulty identifying emotions)
+- Lack of insight into mental state
+- Social desirability bias
+
+Most systems concatenate modalities. This system **measures their alignment** as a separate diagnostic signal.
+
+---
+
 ## System Architecture
 
 ```
@@ -513,16 +535,13 @@ The mismatch in Case 2 is clinically meaningful — the system flags it.
 
 ---
 
-## Research Inspiration
+## Research Context
 
-This system architecture is inspired by multimodal mental health modeling literature, including:
+This project is inspired by multimodal mental health modeling research that combines structured assessments with conversational or behavioral signals. 
 
-- **Alhanai, T., Ghassemi, M., & Glass, J. (2018).** *Detecting Depression with Audio/Text Sequence Modeling of Interviews.* Interspeech. [[paper]](https://www.isca-speech.org/archive/Interspeech_2018/pdfs/1084.pdf) — Pioneering work on combining audio and text modalities for depression detection
-- **Xu, Z., et al. (2025).** *Depression detection methods based on multimodal fusion of voice and text.* Scientific Reports, 15, 1446. [[paper]](https://www.nature.com/articles/s41598-025-85375-z) — Recent advances in multimodal fusion for mental health assessment
-- **Mollahosseini, A., et al. (2017).** *AffectNet: A Database for Facial Expression, Valence, and Arousal Computing in the Wild.* IEEE Transactions on Pattern Analysis and Machine Intelligence. [[paper]](https://arxiv.org/abs/1708.03985) — Foundations of affective computing in naturalistic settings
-- **Chen, T., & Guestrin, C. (2016).** *XGBoost: A Scalable Tree Boosting System.* KDD. [[paper]](https://arxiv.org/abs/1603.02754) — Gradient boosting framework planned for Phase 2 risk modeling
+Unlike many prior systems that concatenate modalities, this engine explicitly models **consistency between self-report and language signals** as a separate diagnostic feature.
 
-**This repository adapts and extends these ideas** by explicitly modeling **consistency between structured self-report and conversational language signals** — a focus not commonly found in prior work. Most systems treat self-report and language as independent modalities; we hypothesize that their *alignment* is itself a meaningful clinical signal.
+The current implementation is a deterministic prototype and does not reproduce any specific neural architecture from prior literature.
 
 ---
 
@@ -602,7 +621,6 @@ Pearson correlation between:
 7. Spitzer, R.L., et al. (2006). *A brief measure for assessing generalized anxiety disorder: the GAD-7.* Archives of Internal Medicine. [[paper]](https://pubmed.ncbi.nlm.nih.gov/16717171/)
 8. Lundberg, S.M., & Lee, S.I. (2017). *A Unified Approach to Interpreting Model Predictions.* NeurIPS. [[paper]](https://arxiv.org/abs/1705.07874) — SHAP interpretability
 
----
 
 ## License
 
